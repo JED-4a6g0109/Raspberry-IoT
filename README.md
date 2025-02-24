@@ -1,4 +1,4 @@
-# AI Agents IoT
+# 邊緣裝置 AI 設置與驗證
 
 ## NLP、STT 與影像處理技術
 
@@ -56,11 +56,11 @@
 
 - **播放音樂**
 
-![image.png](markdown_image/image.png)
+![image.png](markdown_images/image.png)
 
 - **鏡頭人數計算**
 
-![image.png](markdown_image/image%201.png)
+![image.png](markdown_images/image%201.png)
 
 ---
 
@@ -100,7 +100,7 @@ pip install poetry
 poetry install
 ```
 
-![image.png](markdown_image/image%202.png)
+![image.png](markdown_images/image%202.png)
 
 ### 執行 `main.py`
 
@@ -108,7 +108,7 @@ poetry install
 python main.py
 ```
 
-![image.png](markdown_image/image%203.png)
+![image.png](markdown_images/image%203.png)
 
 ### 運行與驗證
 
@@ -146,13 +146,13 @@ python main.py
     ```
     
 
-![image.png](markdown_image/image%204.png)
+![image.png](markdown_images/image%204.png)
 
 ### 人數偵測與 YOLOv8
 
 鏡頭部分是使用原廠樹梅派鏡頭，yolov8n是可以跑得，因為以前研究3B+是跑不了yolov4的，但經驗證確定可行，模型也採用較輕量，只是花費時間約10幾秒
 
-![image.png](markdown_image/image%205.png)
+![image.png](markdown_images/image%205.png)
 
 ---
 
@@ -168,17 +168,17 @@ python main.py
 
 - **確認 S3 上傳成功**
 
-![image.png](markdown_image/image%206.png)
+![image.png](markdown_images/image%206.png)
 
-![image.png](markdown_image/image%207.png)
+![image.png](markdown_images/image%207.png)
 
 ---
 
-![image.png](markdown_image/image%208.png)
+![image.png](markdown_images/image%208.png)
 
-![image.png](markdown_image/image%209.png)
+![image.png](markdown_images/image%209.png)
 
-![image.png](markdown_image/image%2010.png)
+![image.png](markdown_images/image%2010.png)
 
 ## 其他需安裝或者調整-Raspberry Pi(非Raspberry可跳過)
 
