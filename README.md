@@ -1,5 +1,3 @@
-# 邊緣裝置 AI 設置與驗證
-
 ## NLP、STT 與影像處理技術
 
 - **NLP 技術**: `paraphrase-multilingual-MiniLM-L12-v2`
@@ -21,14 +19,14 @@
 1. 安裝 Python 3.11
 2. 安裝 Poetry
     
-    ```
+    ```bash
     pip install poetry
     poetry install
     ```
     
 3. 執行 `main.py`
     
-    ```
+    ```python
     import time
     from audio_processor import recognize_speech, play_sound
     from camera_processor import count_people_in_camera
@@ -72,18 +70,9 @@
 - **相機**: 原廠 Camera
 - **作業系統**: Debian GNU/Linux 12 (Bookworm)
 
-### 系統資訊查詢
-
-```
-cat /etc/os-release  # 查詢 OS 版本
-free -h  # 查詢記憶體資訊
-df -h  # 查詢 SD 卡使用量
-vcgencmd get_mem gpu  # 查詢 GPU 記憶體
-```
-
 ### Python 3.11 環境建置
 
-```
+```bash
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-aarch64.sh -O miniconda.sh
 bash miniconda.sh
 source ~/.bashrc
@@ -94,7 +83,7 @@ conda activate py311-new
 
 ### 安裝相依套件
 
-```
+```bash
 sudo apt-get install -y portaudio19-dev flac libcap-dev
 pip install poetry
 poetry install
@@ -104,7 +93,7 @@ poetry install
 
 ### 執行 `main.py`
 
-```
+```bash
 python main.py
 ```
 
@@ -114,11 +103,11 @@ python main.py
 
 - **使用 mock 方式測試麥克風輸入**
     
-    ```
+    ```python
     recognize_speech(mock_data="say_music.wav")
     ```
     
-    ```bash
+    ```python
     import time
     from audio_processor import recognize_speech, play_sound
     from camera_processor import count_people_in_camera, count_people_in_camera_rpi
@@ -160,7 +149,7 @@ python main.py
 
 ### 設定 Cron Job（每10分鐘執行一次）
 
-```
+```bash
 */10 * * * * cd /home/jed/IoT-AI && /home/jed/miniconda3/envs/py311-new/bin/python s3_uploader.py >> upload.log 2>&1
 ```
 
@@ -184,20 +173,20 @@ python main.py
 
 ### 修正 `GLIBCXX_3.4.30` 問題
 
-```
+```bash
 conda install -c conda-forge libstdcxx-ng=13
 ```
 
 ### 檢查 `libcamera` 與 `pykms`
 
-```
+```bash
 ls /usr/lib/python3/dist-packages/libcamera
 ls /usr/lib/python3/dist-packages/pykms
 ```
 
 若缺少，請安裝並建立映射：
 
-```
+```bash
 sudo apt install -y python3-libcamera python3-pykms
 ln -s /usr/lib/python3/dist-packages/libcamera /home/jed/miniconda3/envs/py311-new/lib/python3.11/site-packages/libcamera
 ln -s /usr/lib/python3/dist-packages/pykms /home/jed/miniconda3/envs/py311-new/lib/python3.11/site-packages/pykms
